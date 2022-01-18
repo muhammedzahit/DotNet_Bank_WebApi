@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# 
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bank_webapi", "bank_webapi\bank_webapi.csproj", "{A651CC3D-69A6-47E9-9DF0-47DFFC3ADDED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A9FF80CC-ED91-4748-96A9-F23BC91C598F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bank_webapi_UnitTests", "Tests\bank_webapi_UnitTests\bank_webapi_UnitTests.csproj", "{1919BF75-CB72-4001-9A1E-B63A16B15A4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A651CC3D-69A6-47E9-9DF0-47DFFC3ADDED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A651CC3D-69A6-47E9-9DF0-47DFFC3ADDED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A651CC3D-69A6-47E9-9DF0-47DFFC3ADDED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A651CC3D-69A6-47E9-9DF0-47DFFC3ADDED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1919BF75-CB72-4001-9A1E-B63A16B15A4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1919BF75-CB72-4001-9A1E-B63A16B15A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1919BF75-CB72-4001-9A1E-B63A16B15A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1919BF75-CB72-4001-9A1E-B63A16B15A4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1919BF75-CB72-4001-9A1E-B63A16B15A4D} = {A9FF80CC-ED91-4748-96A9-F23BC91C598F}
+	EndGlobalSection
+EndGlobal

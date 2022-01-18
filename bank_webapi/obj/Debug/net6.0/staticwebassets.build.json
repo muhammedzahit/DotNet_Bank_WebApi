@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "R46jREPA36msA1DstMbjnVNRbfOZAY/3WDzJDo7ISRo=",
+  "Source": "bank_webapi",
+  "BasePath": "_content/bank_webapi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
