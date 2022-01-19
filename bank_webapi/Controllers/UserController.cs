@@ -18,15 +18,6 @@ public class UserController : ControllerBase
     private readonly IBankDbContext _context;
     private readonly IMapper _mapper;
     private readonly IConfiguration _configuration;
-    static readonly HttpClient _client = new HttpClient();
-
-    private bool ValidateBanker(string token)
-    {
-        var user = _context.Users.SingleOrDefault(x => x.AccessToken == token && x.IsBanker == true);
-        if (user is null)
-            return false;
-        return true;
-    }
     
     public class TokenClass
     {
@@ -50,11 +41,16 @@ public class UserController : ControllerBase
     [HttpGet]
     public IActionResult GetUsers([FromBody] TokenClass token)
     {
-        if (!ValidateBanker(token.Token))
-            return BadRequest("User not authorized for this operation");
-
-        GetUsersQuery query = new GetUsersQuery(_mapper, _context);
-        var users = query.Handle();
+        List<GetUsersQueryModel> users;
+        try
+        {
+            GetUsersQuery query = new GetUsersQuery(_mapper, _context, token);
+            users = query.Handle();
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.ToString());
+        }
         return Ok(users);
     }
 
@@ -62,10 +58,7 @@ public class UserController : ControllerBase
     [HttpGet("{id}")]
     public IActionResult GetDetailUser([FromBody] TokenClass token, string id)
     {
-        if (!ValidateBanker(token.Token))
-            return BadRequest("User not authorized for this operation");
-
-        GetDetailUserQuery query = new GetDetailUserQuery(_mapper, _context);
+        GetDetailUserQuery query = new GetDetailUserQuery(_mapper, _context, token);
         query.QueryId = Convert.ToInt32(id);
         GetDetailUserQueryModel model;
         try
@@ -86,11 +79,7 @@ public class UserController : ControllerBase
     [HttpPost]
     public IActionResult CreateUser([FromBody] CreateUserBody body)
     {
-        Console.WriteLine(body.Token.Token);
-        if (!ValidateBanker(body.Token.Token))
-            return BadRequest("User not authorized for this operation");
-        
-        CreateUserCommand command = new CreateUserCommand(_context, _mapper, body.Model);
+        CreateUserCommand command = new CreateUserCommand(_context, _mapper, body.Model, body.Token);
         CreateUserCommandValidator validator = new CreateUserCommandValidator();
         try
         {
@@ -109,13 +98,9 @@ public class UserController : ControllerBase
     [HttpGet("my_info")]
     public IActionResult GetMyInfo([FromBody] TokenClass tokenClass)
     {
-        var user = _context.Users.SingleOrDefault(x => x.AccessToken.Equals(tokenClass.Token));
-
-        if (user is null)
-            BadRequest("verilen access token gecersiz !!!");
         
-        GetMyInfoQuery query = new GetMyInfoQuery(_mapper, _context);
-        query.QueryId = Convert.ToInt32(user.Id);
+        
+        GetMyInfoQuery query = new GetMyInfoQuery(_mapper, _context, tokenClass);
         GetMyInfoQueryModel model;
         try
         {

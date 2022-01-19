@@ -29,4 +29,8 @@
     <ProjectReference Include="..\..\bank_webapi\bank_webapi.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Operations\MoneyOperations\Queries" />
+  </ItemGroup>
+
 </Project>

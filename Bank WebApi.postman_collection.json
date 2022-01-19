@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "90804bc5-8659-4ce3-9620-93a2967a5b7d",
+		"name": "Bank WebApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Token User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 2,\n    \"password\" : \"client\"\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7025/Users/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7025",
+					"path": [
+						"Users",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTQzOTEsImV4cCI6MTY0MjU5NTI5MSwiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.eFnqe76kHdARy3ep5WmeJSWnoENKk7NyYlSTfjYvEQY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"Token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTQzOTEsImV4cCI6MTY0MjU5NTI5MSwiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.eFnqe76kHdARy3ep5WmeJSWnoENKk7NyYlSTfjYvEQY\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7025/Users",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7025",
+					"path": [
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refreshToken\" : \"4eba5701-a468-4849-8600-b424ca414ba2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7025/Users/refresh_token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7025",
+					"path": [
+						"Users",
+						"refresh_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Detail User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1MDM1OTcsImV4cCI6MTY0MjUwNDQ5NywiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.GZ2mUXGVrsBFz8GlqHsEGT94xSNuwqxt41k2VLm7sy4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1MDM1OTcsImV4cCI6MTY0MjUwNDQ5NywiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.GZ2mUXGVrsBFz8GlqHsEGT94xSNuwqxt41k2VLm7sy4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7025/Users/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7025",
+					"path": [
+						"Users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Account",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTQzOTEsImV4cCI6MTY0MjU5NTI5MSwiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.eFnqe76kHdARy3ep5WmeJSWnoENKk7NyYlSTfjYvEQY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Token\": {\n \"Token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTQzOTEsImV4cCI6MTY0MjU5NTI5MSwiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.eFnqe76kHdARy3ep5WmeJSWnoENKk7NyYlSTfjYvEQY\"\n  },\n  \"Model\": {\n    \"Name\": \"ahmed\",\n    \"Password\": \"ahmed\",\n    \"Capital\": 100,\n    \"Investment\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7025/Users",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7025",
+					"path": [
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTMyNTMsImV4cCI6MTY0MjU5NDE1MywiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.wSgr0YRXnEp6OEkHkl0whZNYDN76cpIumFdZ-Qc3j9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTMyNTMsImV4cCI6MTY0MjU5NDE1MywiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.wSgr0YRXnEp6OEkHkl0whZNYDN76cpIumFdZ-Qc3j9s\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7025/Users/my_info",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7025",
+					"path": [
+						"Users",
+						"my_info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit Money",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTA5MTQsImV4cCI6MTY0MjU5MTgxNCwiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.10eG35oeM__-9YctoGGrn045jZe_0laPzxFozSG9qrw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\" : 1000,\n    \"token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTA5MTQsImV4cCI6MTY0MjU5MTgxNCwiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.10eG35oeM__-9YctoGGrn045jZe_0laPzxFozSG9qrw\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7025/Money/deposit",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7025",
+					"path": [
+						"Money",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw Money",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTIyMDMsImV4cCI6MTY0MjU5MzEwMywiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.iBUrzOzQaGbPY2FVgsx1MU1YGGltPU6wKLrh4qxisYU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\" : 1000,\n    \"token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTIyMDMsImV4cCI6MTY0MjU5MzEwMywiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.iBUrzOzQaGbPY2FVgsx1MU1YGGltPU6wKLrh4qxisYU\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7025/Money/withdraw",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7025",
+					"path": [
+						"Money",
+						"withdraw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invest Money",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTMyNTMsImV4cCI6MTY0MjU5NDE1MywiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.wSgr0YRXnEp6OEkHkl0whZNYDN76cpIumFdZ-Qc3j9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\" : 1000,\n    \"token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTMyNTMsImV4cCI6MTY0MjU5NDE1MywiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.wSgr0YRXnEp6OEkHkl0whZNYDN76cpIumFdZ-Qc3j9s\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7025/Money/invest",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7025",
+					"path": [
+						"Money",
+						"invest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Money",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTQ0NTAsImV4cCI6MTY0MjU5NTM1MCwiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.KNCugJdN4gKQTMRMzGK6OkSBpIdt1lR5r7Xq_LlvYHI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\" : 1000,\n    \"token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDI1OTQ0NTAsImV4cCI6MTY0MjU5NTM1MCwiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.KNCugJdN4gKQTMRMzGK6OkSBpIdt1lR5r7Xq_LlvYHI\",\n    \"iban\" : 809\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7025/Money/send",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7025",
+					"path": [
+						"Money",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Token Banker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 1,\n    \"password\" : \"admin\"\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7025/Users/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7025",
+					"path": [
+						"Users",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

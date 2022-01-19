@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZKdOD4L5fzp/Pk9UWT2rM4sLcj8pLabIAFPEdMP+g/jqdjPaeoY1qUFBm+jZBplVarjeMBGk5jbWet1TqETvzQ==",
+  "dgSpecHash": "yhjEhIKKNknHcAYFmBzoIHnUttr3isgfpgyP6xRDzuSwWHiMlvnrmFicySG5UlzbBl+C5Hx2nB+cjrtSqigwTQ==",
   "success": true,
-  "projectFilePath": "/home/muhammed/Documents/dotnet denemeler/bank/Solution1/Tests/bank_webapi_UnitTests/bank_webapi_UnitTests.csproj",
+  "projectFilePath": "/home/muhammed/Documents/dotnet denemeler/DotNet Bank WebApi/DotNet Bank WebApi/Tests/bank_webapi_UnitTests/bank_webapi_UnitTests.csproj",
   "expectedPackageFiles": [
     "/home/muhammed/.nuget/packages/automapper/11.0.0/automapper.11.0.0.nupkg.sha512",
     "/home/muhammed/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

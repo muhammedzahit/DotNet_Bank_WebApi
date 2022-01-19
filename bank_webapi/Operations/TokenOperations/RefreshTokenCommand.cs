@@ -23,6 +23,8 @@ public class RefreshTokenCommand
             throw new InvalidOperationException("refresh token did not found !!");
         else if (user.RefreshTokenExpireDate < DateTime.Now)
             throw new InvalidOperationException("refresh token expired !!!");
+        else if (_configuration is null)
+            throw new NullReferenceException("_configuration is null !!!");
         TokenHandler.TokenHandler handler = new TokenHandler.TokenHandler(_context, _configuration);
         Token token = handler.CreateToken();
         user.RefreshToken = token.RefreshToken;

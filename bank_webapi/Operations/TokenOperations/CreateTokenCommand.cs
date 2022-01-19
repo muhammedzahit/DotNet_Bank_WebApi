@@ -24,6 +24,8 @@ public class CreateTokenCommand
         var user = _context.Users.SingleOrDefault(x => x.Id == Model.Id && x.Password == Model.Password);
         if (user is null)
             throw new InvalidOperationException("given informations does not match !!!");
+        if (_configuration is null)
+            throw new InvalidOperationException("_configuration paramater is null");
         TokenHandler.TokenHandler handler = new TokenHandler.TokenHandler(_context, _configuration);
         Token token = handler.CreateToken();
         user.RefreshToken = token.RefreshToken;

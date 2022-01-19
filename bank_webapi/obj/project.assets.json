@@ -2127,11 +2127,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/muhammed/Documents/dotnet denemeler/bank/Solution1/bank_webapi/bank_webapi.csproj",
+      "projectUniqueName": "/home/muhammed/Documents/dotnet denemeler/DotNet Bank WebApi/DotNet Bank WebApi/bank_webapi/bank_webapi.csproj",
       "projectName": "bank_webapi",
-      "projectPath": "/home/muhammed/Documents/dotnet denemeler/bank/Solution1/bank_webapi/bank_webapi.csproj",
+      "projectPath": "/home/muhammed/Documents/dotnet denemeler/DotNet Bank WebApi/DotNet Bank WebApi/bank_webapi/bank_webapi.csproj",
       "packagesPath": "/home/muhammed/.nuget/packages/",
-      "outputPath": "/home/muhammed/Documents/dotnet denemeler/bank/Solution1/bank_webapi/obj/",
+      "outputPath": "/home/muhammed/Documents/dotnet denemeler/DotNet Bank WebApi/DotNet Bank WebApi/bank_webapi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/muhammed/.nuget/NuGet/NuGet.Config"

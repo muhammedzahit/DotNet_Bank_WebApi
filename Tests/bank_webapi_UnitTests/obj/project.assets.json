@@ -8483,11 +8483,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/muhammed/Documents/dotnet denemeler/bank/Solution1/Tests/bank_webapi_UnitTests/bank_webapi_UnitTests.csproj",
+      "projectUniqueName": "/home/muhammed/Documents/dotnet denemeler/DotNet Bank WebApi/DotNet Bank WebApi/Tests/bank_webapi_UnitTests/bank_webapi_UnitTests.csproj",
       "projectName": "bank_webapi_UnitTests",
-      "projectPath": "/home/muhammed/Documents/dotnet denemeler/bank/Solution1/Tests/bank_webapi_UnitTests/bank_webapi_UnitTests.csproj",
+      "projectPath": "/home/muhammed/Documents/dotnet denemeler/DotNet Bank WebApi/DotNet Bank WebApi/Tests/bank_webapi_UnitTests/bank_webapi_UnitTests.csproj",
       "packagesPath": "/home/muhammed/.nuget/packages/",
-      "outputPath": "/home/muhammed/Documents/dotnet denemeler/bank/Solution1/Tests/bank_webapi_UnitTests/obj/",
+      "outputPath": "/home/muhammed/Documents/dotnet denemeler/DotNet Bank WebApi/DotNet Bank WebApi/Tests/bank_webapi_UnitTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/muhammed/.nuget/NuGet/NuGet.Config"
@@ -8502,8 +8502,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/home/muhammed/Documents/dotnet denemeler/bank/Solution1/bank_webapi/bank_webapi.csproj": {
-              "projectPath": "/home/muhammed/Documents/dotnet denemeler/bank/Solution1/bank_webapi/bank_webapi.csproj"
+            "/home/muhammed/Documents/dotnet denemeler/DotNet Bank WebApi/DotNet Bank WebApi/bank_webapi/bank_webapi.csproj": {
+              "projectPath": "/home/muhammed/Documents/dotnet denemeler/DotNet Bank WebApi/DotNet Bank WebApi/bank_webapi/bank_webapi.csproj"
             }
           }
         }

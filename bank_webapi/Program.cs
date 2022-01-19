@@ -24,7 +24,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Authentication
-// Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer( opt =>
     {
         opt.TokenValidationParameters = new TokenValidationParameters
